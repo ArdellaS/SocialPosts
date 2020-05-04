@@ -1,0 +1,25 @@
+<p>Whatcha thinking?</p>
+<ul>
+   <li *ngFor="let p of posts; let postIndex = index;">
+       {{p.title}}<br>
+       {{p.thought}}
+       <button (click)="deletePost(postIndex)">X</button> 
+
+   </li>
+</ul>
+
+
+<div>
+
+   <form>
+      <input type="text"  placeholder="Post title" [(ngModel)]="title" name="postTitle" />
+
+      <br>
+
+      <input type="text"  placeholder="Thoughts...?" [(ngModel)]="thought" name="postThought"/><br>
+
+      <button type="submit" (click)="submitPost($event)">Submit</button>
+   </form>
+
+
+</div>
